@@ -1,5 +1,5 @@
 import React from "react";
-import "./logo.css";
+import "./Logo.css";
 export default function Logo() {
   return (
     <div className="flex items-center justify-start gap-2 ">
