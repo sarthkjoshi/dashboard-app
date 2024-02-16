@@ -31,8 +31,8 @@ const TrendAnalysis: React.FC<{ data: DashboardData }> = ({ data }) => {
 
   return (
     <div className="flex flex-col justify-center items-center gap-5">
-      <h2 className="text-center">Trend Analysis</h2>
-      <div className="text-center">
+      <h2 className="text-center font-bold text-xl">Trend Analysis</h2>
+      <div className="flex flex-col md:flex-row text-center gap-2">
         <label htmlFor="startDate">Start Date:</label>
         <input
           type="date"
