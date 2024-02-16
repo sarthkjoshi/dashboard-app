@@ -1,44 +1,59 @@
 import Card from "@/components/common/Card";
 import AreaCharts from "@/components/graphs/AreaCharts";
 import BarCharts from "@/components/graphs/BarCharts";
-
+import fakeDashboardData from "@/Data";
 import React from "react";
+export default async function DashBoard() {
+  const calculateTotalSales = (data: DashboardData): number => {
+    return data.sales.reduce((total: number, sale) => total + sale.amount, 0);
+  };
 
-export default function DashBoard() {
+  const calculateTotalRevenue = (data: DashboardData): number => {
+    return data.products.reduce(
+      (total: number, product) => total + product.revenue,
+      0
+    );
+  };
+
+  const calculateTotalVisitors = (data: DashboardData): number => {
+    return data.visitors.reduce(
+      (total: number, visitor) => total + visitor.count,
+      0
+    );
+  };
+
+  const totalSales: number = calculateTotalSales(fakeDashboardData);
+  const totalRevenue: number = calculateTotalRevenue(fakeDashboardData);
+  const totalVisitors: number = calculateTotalVisitors(fakeDashboardData);
+
   return (
     <div>
       <div className="flex flex-col gap-4 md:flex-row mb-12 ">
         <div className="flex-1">
           <Card
-            data={
-              "U.S. petroleum consumption is projected to remain below the 2005 level."
-            }
-            label={"Energy Consumption Projection"}
+            data={totalSales}
+            label={"Total Sales:"}
             icon={"/EnergySymbol.jpg"}
           />
         </div>
         <div className="flex-1">
           <Card
-            data={
-              "Reference case U.S. crude oil production is projected to recover from recent declines."
-            }
-            label={"Crude Oil Production Projection"}
+            data={totalRevenue}
+            label={"Total Visitors:"}
             icon={"/OilBar.jpg"}
           />
         </div>
         <div className="flex-1">
           <Card
-            data={
-              "U.S. natural gas consumption is expected to increase during much of the projection period."
-            }
-            label={"Natural Gas Consumption Projection"}
+            data={totalVisitors}
+            label={"Total Revenue:"}
             icon={"/GasFlame.jpg"}
           />
         </div>
       </div>
       <div className="flex flex-col gap-4 md:flex-row">
-        <AreaCharts />
-        <BarCharts />
+        <AreaCharts data={fakeDashboardData} />
+        <BarCharts data={fakeDashboardData} />
       </div>
     </div>
   );

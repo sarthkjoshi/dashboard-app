@@ -1,31 +1,31 @@
 "use client";
 import React from "react";
 import {
-  AreaChart,
-  Area,
+  LineChart,
+  Line,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  ResponsiveContainer,
   Legend,
+  ResponsiveContainer,
 } from "recharts";
-
-export default function AreaCharts({ data }: { data: DashboardData }) {
+const LineCharts: React.FC<{ data: DashboardData }> = ({ data }) => {
   return (
     <ResponsiveContainer
       width="100%"
       height={430}
       className="border rounded-xl p-2 md:p-4  bg-white shadow-xl"
     >
-      <AreaChart width={600} height={400} data={data.visitors}>
+      <LineChart width={600} height={300} data={data.visitors}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="date" />
         <YAxis />
         <Tooltip />
         <Legend />
-        <Area type="monotone" dataKey="count" fill="#8884d8" />
-      </AreaChart>
+        <Line type="monotone" dataKey="count" stroke="#8884d8" />
+      </LineChart>
     </ResponsiveContainer>
   );
-}
+};
+export default LineCharts;

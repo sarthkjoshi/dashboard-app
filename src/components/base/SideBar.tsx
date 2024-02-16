@@ -7,6 +7,9 @@ import {
   Paperclip,
   Brush,
   Wrench,
+  Sheet,
+  TrendingUp,
+  AreaChart,
 } from "lucide-react";
 import Link from "next/link";
 import Logo from "./Logo";
@@ -32,10 +35,17 @@ export default function SideBar() {
             </Link>
             <Link
               className="flex transform items-center rounded-lg px-3 py-2 text-gray-200 transition-colors duration-300 hover:bg-gray-100 hover:text-gray-700"
-              href="/dashboard/sales"
+              href="/dashboard/datatable"
             >
-              <Wallet className="h-5 w-5" aria-hidden="true" />
-              <span className="mx-2 text-sm font-medium">Sales</span>
+              <Sheet className="h-5 w-5" aria-hidden="true" />
+              <span className="mx-2 text-sm font-medium">Data Table</span>
+            </Link>
+            <Link
+              className="flex transform items-center rounded-lg px-3 py-2 text-gray-200 transition-colors duration-300 hover:bg-gray-100 hover:text-gray-700"
+              href="/dashboard/trends"
+            >
+              <TrendingUp className="h-5 w-5" aria-hidden="true" />
+              <span className="mx-2 text-sm font-medium">Trend Analysis</span>
             </Link>
           </div>
           <div className="space-y-3 ">
@@ -44,10 +54,10 @@ export default function SideBar() {
             </label>
             <Link
               className="flex transform items-center rounded-lg px-3 py-2 text-gray-200 transition-colors duration-300 hover:bg-gray-100 hover:text-gray-700"
-              href="#"
+              href="/dashboard/charts"
             >
-              <Newspaper className="h-5 w-5" aria-hidden="true" />
-              <span className="mx-2 text-sm font-medium">Blogs</span>
+              <AreaChart className="h-5 w-5" aria-hidden="true" />
+              <span className="mx-2 text-sm font-medium">Charts</span>
             </Link>
             <Link
               className="flex transform items-center rounded-lg px-3 py-2 text-gray-200 transition-colors duration-300 hover:bg-gray-100 hover:text-gray-700"

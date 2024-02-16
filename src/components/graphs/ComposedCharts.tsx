@@ -1,31 +1,35 @@
 "use client";
 import React from "react";
 import {
-  AreaChart,
+  ComposedChart,
+  Line,
+  Bar,
   Area,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  ResponsiveContainer,
   Legend,
+  ResponsiveContainer,
 } from "recharts";
 
-export default function AreaCharts({ data }: { data: DashboardData }) {
+const ComposedCharts = ({ data }: { data: DashboardData }) => {
   return (
     <ResponsiveContainer
       width="100%"
       height={430}
       className="border rounded-xl p-2 md:p-4  bg-white shadow-xl"
     >
-      <AreaChart width={600} height={400} data={data.visitors}>
-        <CartesianGrid strokeDasharray="3 3" />
+      <ComposedChart width={600} height={300} data={data.sales}>
+        <CartesianGrid stroke="#f5f5f5" />
         <XAxis dataKey="date" />
         <YAxis />
         <Tooltip />
         <Legend />
-        <Area type="monotone" dataKey="count" fill="#8884d8" />
-      </AreaChart>
+        <Line type="monotone" dataKey="amount" stroke="#ff7300" />
+      </ComposedChart>
     </ResponsiveContainer>
   );
-}
+};
+
+export default ComposedCharts;
