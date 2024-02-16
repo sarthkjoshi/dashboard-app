@@ -16,7 +16,6 @@ export default async function page() {
       <LineCharts data={fakeDashboardData} />
       <AreaCharts data={fakeDashboardData} />
       <BarCharts data={fakeDashboardData} />
-
       <ScatterCharts data={fakeDashboardData} />
       <ComposedCharts data={fakeDashboardData} />
     </div>

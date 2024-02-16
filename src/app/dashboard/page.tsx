@@ -2,6 +2,7 @@ import Card from "@/components/common/Card";
 import AreaCharts from "@/components/graphs/AreaCharts";
 import BarCharts from "@/components/graphs/BarCharts";
 import fakeDashboardData from "@/Data";
+
 import React from "react";
 export default async function DashBoard() {
   const calculateTotalSales = (data: DashboardData): number => {
@@ -30,24 +31,20 @@ export default async function DashBoard() {
     <div>
       <div className="flex flex-col gap-4 md:flex-row mb-12 ">
         <div className="flex-1">
-          <Card
-            data={totalSales}
-            label={"Total Sales:"}
-            icon={"/EnergySymbol.jpg"}
-          />
+          <Card data={totalSales} label={"Total Sales"} icon={"rupee.svg"} />
         </div>
         <div className="flex-1">
           <Card
             data={totalRevenue}
-            label={"Total Visitors:"}
-            icon={"/OilBar.jpg"}
+            label={"Total Revenue"}
+            icon={"activity.svg"}
           />
         </div>
         <div className="flex-1">
           <Card
             data={totalVisitors}
-            label={"Total Revenue:"}
-            icon={"/GasFlame.jpg"}
+            label={"Total Visitors"}
+            icon={"users.svg"}
           />
         </div>
       </div>
