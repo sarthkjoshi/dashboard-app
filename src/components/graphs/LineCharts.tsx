@@ -1,4 +1,5 @@
 "use client";
+import { DSAEncoding } from "crypto";
 import React from "react";
 import {
   LineChart,
@@ -10,7 +11,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-const LineCharts: React.FC<{ data: DashboardData }> = ({ data }) => {
+export default function LineCharts({ data }: { data: DashboardData }) {
   return (
     <ResponsiveContainer
       width="100%"
@@ -29,5 +30,4 @@ const LineCharts: React.FC<{ data: DashboardData }> = ({ data }) => {
       </div>
     </ResponsiveContainer>
   );
-};
-export default LineCharts;
+}
